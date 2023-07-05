@@ -1,3 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Varela", sans-serif;
+    
+}
+
+
+  
+  /* Ajustar estilos para secciones y otros elementos dentro de body */
+  
+
+
+section{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -120px;
+    
+}
+
+
+.filtro{
+    display: none;
+}    
+
+.title{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 26px;
+    color: white;
+    text-align: center;
+    font-family: "Varela", sans-serif;
+
+
+}   
+
+
+.link{
+  text-decoration: none;
+}
+
+
+.donar{
+    margin: 1rem;
+    color: white;
+    font-size: 1rem;
+    
+}
+
+.Tzedaka{
+  position: relative;
+  left: 40%;
+}
+
+
+.icon{
+    max-width: 10%;
+}
+
+
+
+.btn{
+    width: 100%;
+}
+
+
+body{
+    background: #5e548e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input, #listaSegulot{
+    width: 50vw;
+    margin: auto;
+    padding: 10px;
+    outline: none;
+   
+    font-weight: 600;
+}
+
+
+#listaSegulot{
+    font-size: 15px;
+    
+    list-style: none;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    column-count: 4;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+li{
+    margin: 5px 0;
+    list-style: none;
+}
+
+
+  .articulo {
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  
+  #listaSegulot {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  #listaSegulot li {
+    box-shadow: 0px 0px 5px rgba(80, 74, 74, 0.1);
+    padding: 1rem;
+  }
+  
+  #listaSegulot li.columna1 {
+    grid-column: span 1;
+  }
+  
+  #listaSegulot li.columna2 {
+    grid-column: span 2;
+  }
+  
+  #listaSegulot li.columna3 {
+    grid-column: span 3;
+  }
+  
+  #contenedor-resultado {
+    height: 2rem;
+  }
+  
+
+  .input{
+    
+    border: 5px solid #CCD1E4;
+    border-radius: 0.5rem;
+    
+  
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-contenido {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+
+  
+  .modal {
+    display: none; /* ocultar la ventana modal por defecto */
+    position: fixed; /* posici�n fija en la pantalla */
+    z-index: 1; /* colocar la ventana modal por encima de los dem�s elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* habilitar el desplazamiento de la ventana modal */
+    background-color: rgba(0,0,0,0.4); /* color de fondo con transparencia */
+  }
+  
+  .modal-contenido {
+    background-color: black;
+    margin: 15% auto; /* centrar la ventana modal verticalmente y colocarla a 15% desde la parte superior */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* tama�o de la ventana modal */
+  }
+  
+  .cerrar-modal {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .cerrar-modal:hover,
+  .cerrar-modal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* MEDIA QUERIES */
+@media screen and (max-width: 1080px){
+    .contenedor{
+        height: auto;
+    }
+    .Tzedaka{
+      position: relative;
+      left: 0%;
+    }
+    .h1.title{
+      
+    }
+}
+
+@media screen and (max-width: 760px){
+  .contenedor{
+      height: auto;
+  }
+  .Tzedaka{
+    position: relative;
+    left: 0%;
+  }
+  .h1.title{
+   
+  }
+}
+
+@media screen and (max-width: 480px){
+  .contenedor{
+      height: auto;
+  }
+  .Tzedaka{
+    position: relative;
+    left: 0%;
+  }
+  .h1.title{
+    
+  }
+}
+
+
 /* CUSTOM RESETS
 ================================================== */
 a, button {
@@ -2753,6 +3006,7 @@ html, body {
   -webkit-appearance: none;
 }
 
+
 .form-control:focus {
   box-shadow: none;
   border-bottom-color: #196fc2;
@@ -2762,13 +3016,15 @@ textarea.form-control {
   margin-top: 50px;
   min-height: 150px;
   resize: none;
+  
 }
-
 #usuario::placeholder,
 #pass::placeholder {
   text-align: center;
 }
-
+input::placeholder {
+  text-align: center;
+}
 
 @media only screen and (max-width: 767px) {
   /* Section: Contact */
@@ -3074,78 +3330,4 @@ textarea.form-control {
     height: 36px;
     width: 36px;
   }
-}
-
-
-.share {
-  display: flex;
-  justify-content: center;
-}
-.share a {
-  margin: 0 5px;
-  text-decoration: none;
-  color: #fff;
-  padding: 10px;
-  border: 1px solid rgba(0,0,0,.2);
-  border-radius: 0 5px 5px 5px;
-  -webkit-border-radius: 0 5px 5px 5px;
-  -moz-border-radius: 0 5px 5px 5px;
-  -ms-border-radius: 0 5px 5px 5px;
-  -o-border-radius: 0 5px 5px 5px;
-  transition: all 400ms ease;
-  -webkit-transition: all 400ms ease;
-  -moz-transition: all 400ms ease;
-  -ms-transition: all 400ms ease;
-  -o-transition: all 400ms ease;
-}
-
-.share .whatsapp {
-  background: #018101cb;
-}
-.share .whatsapp:hover {
-  color: #018101cb;
-  background: transparent;
-  border: 1px dashed #018101cb;
-}
-
-.share .facebook {
-  background: #050599;
-}
-.share .facebook:hover {
-  color: #050599;
-  background: transparent;
-  border: 1px dashed #050599;
-}
-.share .twitter {
-  background: #00a2ff;
-}
-.share .twitter:hover {
-  color: #00a2ff;
-  background: transparent;
-  border: 1px dashed #00a2ff;
-}
-
-
-.buttonshare {
-  min-width: 700px;
-  display: flex;
-  justify-content:center;
-}
-
-.buttonshare a {
-  text-decoration: none;
-  font-size: 28px;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
-  background: #314652;
-  color: #f1f1f1;
-  border-radius: 50%;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
-  transition: all .4s ease-in-out;
-}
-
-.buttonshare a:hover {
-  transform: scale(1.2);
 }

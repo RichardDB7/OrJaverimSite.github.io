@@ -103,7 +103,8 @@
                         <li class="page-scroll"><a href="index.html">Home</a></li>
                         
                         <li class="page-scroll"><a href="https://www.paypal.com/paypalme/paunvrr?country.x=ES&locale.x=es_ES"target="_blank">Tzedaká-Donar</a></li>
-                        
+                        <li class="page-scroll"><a href="https://richarddb7.github.io/TehilimApp.github.io/">Directorio De Salmos</a></li>
+
                         <li class="page-scroll"><a href="#contact">Contacto</a></li>
                         
                     </ul><!-- /.navbar-nav -->
@@ -398,36 +399,37 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-        <!-- Contacts section --> 
-        <section class="site-section section-contact" id="contact">
-            <div class="container">
-                <h2>CONTACTANOS</h2>
-                <p class="section-subtitle"><span>Estamos Para Ayudarte</span></p>
-                <div class="row">
-                    <form id="formfoot" >
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" name="user" placeholder="Nombre" required>
-                        </div>
-                        <div class="col-md-4">
-                            <input class="form-control" type="email" name="email" placeholder="Email" required>
-                        </div>
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" name="subject" placeholder="Asunto" required>
-                        </div>
-                        <div class="col-sm-12">
-                            <textarea class="form-control"  name="message" placeholder="Mensaje"  required></textarea>
-                        </div>
-
-                        <div class="col-sm-12">
-                            <button class="btn btn-inverted" type="submit" >Enviar</button>
-                        </div>  
-                       
-                    </form>
+       <!-- Contact section --> 
+       <section class="site-section section-contact" id="contact">
+        <div class="container">
+            <h2>CONTACTANOS</h2>
+            <p class="section-subtitle"><span>Estamos Para Ayudarte</span></p>
+            <div class="row">
+                <form id="formfoot" action="send.php" method="post">
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" id="name" name="name" placeholder="Nombre" required>
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" id="subject" name="subject" placeholder="Asunto" required>
+                    </div>
+                    <div class="col-sm-12">
+                        <textarea class="form-control" id="message" name="message" placeholder="Mensaje"  required></textarea>
+                        <h3 class="section-subtitle"  id="respuesta"></h3>
+                    </div>
+                   
+                    <div class="col-sm-12">
+                        <button class="btn btn-inverted" id="Enviar" type="submit" name="save" >Enviar</button>
+                    </div>  
                     
-                </div>
+                </form>
+                
             </div>
-        </section><!-- /.section-contact-->
-        <!-- End Contacts section --> 
+        </div>
+    </section><!-- /.section-contact-->
+    <!-- End Contacts section --> 
         
         <!-- Social Networks section --> 
         <section class="section-networks blue-bg">
@@ -435,9 +437,7 @@
                 <a href="https://www.facebook.com/profile.php?id=100063667550821" target="_blank" class="rectangle">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a href="#" class="rectangle">
-                    <i class="fa fa-instagram"></i>
-                </a>
+                
                 <!-- <a href="#" class="rectangle">
                     <i class="fa fa-twitter"></i>
                 </a> -->
@@ -464,10 +464,8 @@
 
             <ul class="list-unstyled list-inline">
                 <li class="page-scroll"><a href="index.html">Home</a></li>
-                <!-- <li class="page-scroll"><a href="#about">About</a></li> -->
-                
-                <li class="page-scroll"><a href="blog.html">Blog</a></li>
                 <li class="page-scroll"><a href="https://www.paypal.com/paypalme/paunvrr?country.x=ES&locale.x=es_ES"target="_blank">Tzedaká-Donar</a></li>                
+                <li class="page-scroll"><a href="https://richarddb7.github.io/TehilimApp.github.io/">Directorio De Salmos</a></li>
                 <li class="page-scroll"><a href="#contact">Contacto</a></li>
             </ul>
 
@@ -525,7 +523,42 @@
     <!-- Modals JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>   
   
+     <!-- Form Data -->
+    <script>
+        var xhr = new XMLHttpRequest();
+        var data = document.getElementById('formfoot');
         
+        function limpiarFormulario() {document.getElementById('formfoot').reset();}
+        
+        function borrarMensaje() {
+          setTimeout(function() {
+            document.getElementById('respuesta').innerHTML = '';
+          }, 2500);
+        }
+        
+        data.addEventListener('submit', function(ev) {
+          ev.preventDefault();
+          
+          var form = new FormData(data);
+        
+          xhr.open('POST', 'send.php');
+          xhr.onload = function() {
+            if (xhr.status === 200) {
+              console.log("Conexión establecida" + " " + xhr.status);
+              console.log(xhr.responseText);
+              document.getElementById('respuesta').innerHTML = xhr.responseText;
+              limpiarFormulario();
+              borrarMensaje();
+            } else {
+              console.log("Error en la petición" + xhr.status);
+            }
+          };
+        
+          xhr.send(form);
+        });
+        
+
+    </script>   
 
     <!---->
 

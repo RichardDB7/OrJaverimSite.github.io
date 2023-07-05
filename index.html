@@ -39,20 +39,21 @@
     <!-- Stylesheets
     ================================================== -->
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../Or Javerim Site/assets/css/bootstrap.min.css" />
 
     <!-- Font Awesome core CSS -->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../Or Javerim Site/assets/css/font-awesome.min.css" />
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../Or Javerim Site/assets/css/style.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-        
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
 <body>
 
@@ -106,7 +107,7 @@
                         <li class="page-scroll"><a href="#services">Cursos</a></li>
                         <li class="page-scroll"><a href="blog.html">Blog</a></li>
                         <li class="page-scroll"><a href="https://www.paypal.com/paypalme/paunvrr?country.x=ES&locale.x=es_ES"target="_blank">Tzedaká-Donar</a></li>
-                        <li class="page-scroll"><a href="https://richarddb7.github.io/TehilimApp.github.io/">Directorio De Salmos</a></li>
+                        <li class="page-scroll"><a href="http://localhost/Or%20Javerim%20Site/TehilimApp/FormLogin.php">Directorio De Salmos</a></li>
                         <li class="page-scroll"><a href="#contact">Contacto</a></li>
                         
                     </ul><!-- /.navbar-nav -->
@@ -491,6 +492,7 @@
                 <div class="modal-footer">
                     <a href="assets/img/Curso sueños Or Javerim.pdf" target="_blank" class="btn">Temario</a>
                 </div>
+                <a href="http://localhost:4000/" id="comprar" target="_blank" class="btn">Comprar</a>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
@@ -521,22 +523,23 @@
                 <div class="row">
                     <form id="formfoot" action="send.php" method="post">
                         <div class="col-md-4">
-                            <input class="form-control" type="text" name="name" placeholder="Nombre" required>
+                            <input class="form-control" type="text" id="name" name="name" placeholder="Nombre" required>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" type="email" name="email" placeholder="Email" required>
+                            <input class="form-control" type="email" id="email" name="email" placeholder="Email" required>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" type="text" name="subject" placeholder="Asunto" required>
+                            <input class="form-control" type="text" id="subject" name="subject" placeholder="Asunto" required>
                         </div>
                         <div class="col-sm-12">
-                            <textarea class="form-control"  name="message" placeholder="Mensaje"  required></textarea>
+                            <textarea class="form-control" id="message" name="message" placeholder="Mensaje"  required></textarea>
+                            <h3 class="section-subtitle"  id="respuesta"></h3>
                         </div>
-
-                        <div class="col-sm-12">
-                            <button class="btn btn-inverted" type="submit" name="save" >Enviar</button>
-                        </div>  
                        
+                        <div class="col-sm-12">
+                            <button class="btn btn-inverted" id="Enviar" type="submit" name="save" >Enviar</button>
+                        </div>  
+                        
                     </form>
                     
                 </div>
@@ -641,21 +644,42 @@
 
     <!-- Form Data -->
     <script>
-        // const $form = document.querySelector('#formfoot');
-        // const $buttonMailTo = document.querySelector('#link');
-        // $form.addEventListener('submit', handleSubmit);
-
-        // function handleSubmit(event){
-        //     event.preventDefault()
-        // const form = new FormData(this)
+        var xhr = new XMLHttpRequest();
+        var data = document.getElementById('formfoot');
         
-        // $buttonMailTo.setAttribute('href',`mailto:Iod@Digital.com?subject=${form.get('user')}${form.get('email')}&body=${form.get('message')}`)
-        // $buttonMailTo.click()
-        // }
+        function limpiarFormulario() {document.getElementById('formfoot').reset();}
+        
+        function borrarMensaje() {
+          setTimeout(function() {
+            document.getElementById('respuesta').innerHTML = '';
+          }, 2500);
+        }
+        
+        data.addEventListener('submit', function(ev) {
+          ev.preventDefault();
+          
+          var form = new FormData(data);
+        
+          xhr.open('POST', 'send.php');
+          xhr.onload = function() {
+            if (xhr.status === 200) {
+              console.log("Conexión establecida" + " " + xhr.status);
+              console.log(xhr.responseText);
+              document.getElementById('respuesta').innerHTML = xhr.responseText;
+              limpiarFormulario();
+              borrarMensaje();
+            } else {
+              console.log("Error en la petición" + xhr.status);
+            }
+          };
+        
+          xhr.send(form);
+        });
+        
 
-    </script>   
-
-    <!---->
+    </script>
+   
+     <!---->
 
 </body>
 
