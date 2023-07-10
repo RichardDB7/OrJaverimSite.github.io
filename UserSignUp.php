@@ -39,20 +39,64 @@
     <!-- Stylesheets
     ================================================== -->
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-    
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+
     <!-- Font Awesome core CSS -->
-    <link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-  
+    <link rel="stylesheet" href="assets/css/style.css">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    </head>
+        
+</head>
+<body>
+
+    
+
+    <!-- Header -->
+    <header id="masthead" class="site-header">
+        <nav id="primary-navigation" class="site-navigation" data-spy="affix">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                   
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#portfolio-perfect-collapse" aria-expanded="false" >
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <!-- Name -->
+                    <div class="page-scroll site-logo">
+                        <a href="index.html">Or Javerim</a>
+                        
+                    </div>
+                    
+
+                </div><!-- /.navbar-header -->
+
+                <div class="main-menu collapse navbar-collapse" id="portfolio-perfect-collapse">
+
+                    <!-- Navigation -->
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="page-scroll"><a href="http://localhost/Or%20Javerim%20Site">Home</a></li>
+                        <li class="page-scroll"><a href="blog.html">Blog</a></li>
+                        <li class="page-scroll"><a href="https://www.paypal.com/paypalme/paunvrr?country.x=ES&locale.x=es_ES"target="_blank">Tzedaká-Donar</a></li>
+
+                        
+                    </ul><!-- /.navbar-nav -->
+
+                </div><!-- /.navbar-collapse -->
+            </div>
+        </nav><!-- /.primary-navigation -->
+    </header><!-- /#header -->
+    <!-- End Header -->
+
     <?php
 
   //session_start();
@@ -87,56 +131,7 @@
 
 ?>
 
-<body>
-
-
-<!-- Header -->
-    <header id="masthead" class="site-header">
-        <nav id="primary-navigation" class="site-navigation" data-spy="affix">
-            <div class="container">
-                <div class="navbar-header page-scroll">
-                   
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#portfolio-perfect-collapse" aria-expanded="false" >
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    
-                    <!-- Name -->
-                    <div class="page-scroll site-logo">
-                        <a href="#">Or Javerim</a>
-                        
-                    </div>
-                    
-
-                </div><!-- /.navbar-header -->
-
-                <div class="main-menu collapse navbar-collapse" id="portfolio-perfect-collapse">
-
-                    <!-- Navigation -->
-                    <ul class="nav navbar-nav navbar-right">
-
-                        
-                        <li class="page-scroll"><a href="#intro">Quien Soy</a></li>
-                        <!-- <li class="page-scroll"><a href="#about">About</a></li> -->
-                        <li class="page-scroll"><a href="#services">Cursos</a></li>
-                        <li class="page-scroll"><a href="blog.html">Blog</a></li>
-                        <li class="page-scroll"><a href="https://www.paypal.com/paypalme/paunvrr?country.x=ES&locale.x=es_ES"target="_blank">Tzedaká-Donar</a></li>
-                        <li class="page-scroll"><a href="http://localhost/Or%20Javerim%20Site/TehilimApp/FormLogin.php">Directorio De Salmos</a></li>
-                        <li class="page-scroll"><a href="#contact">Contacto</a></li>
-                        
-                    </ul><!-- /.navbar-nav -->
-
-                </div><!-- /.navbar-collapse -->
-            </div>
-        </nav><!-- /.primary-navigation -->
-    </header><!-- /#header -->
-    <!-- End Header -->
-
-
-
-
-<?php require 'partials/header.php' ?>
+<?php require 'TehilimApp/partials/header.php' ?>
 
 
       <!-- Main content -->
@@ -171,27 +166,9 @@
           </div>
       </section><!-- /.section-contact-->
       <!-- End Contacts section --> 
-    
-    
 
-</main><!-- /#main -->
-<!-- End Main content -->
 
-<!-- Footer --> 
-<footer id="colophon" class="site-footer">
 
-    <div class="container-fluid">
-
-        <ul class="list-unstyled list-inline">
-            <li class="page-scroll"><a href="http://localhost/Or%20Javerim%20Site/index.html">Home</a></li>
-            <li class="page-scroll"><a href="blog.html">Blog</a></li>
-            <li class="page-scroll"><a href="https://www.paypal.com/paypalme/paunvrr?country.x=ES&locale.x=es_ES"target="_blank">Tzedaká-Donar</a></li>
-              <li class="page-scroll"><a href="#contact">Contacto</a></li>
-        </ul>
-
-        
-
-    </div>
 
     <div class="container text-center">
         <p class="copyright">&copy; <a href="" target="_blank">Or Javerim</a> - 2023</p>
@@ -199,41 +176,96 @@
 
 </footer><!-- /#footer -->
 <!-- End Footer --> 
+           
 
 
+         
+        
+            
+    
+                
+          
+   
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<!-- jQuery core js | Do not Delete -->
-<script src="assets/js/jquery.min.js"></script>
+    
 
-<!-- Bootstrap core js | Do not Delete -->
-<script src="assets/js/bootstrap.min.js"></script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- jQuery core js | Do not Delete -->
+    <script src="assets/js/jquery.min.js"></script>
 
-<!-- Bootstrap progressbar JS -->
-<script src="assets/js/bootstrap-progressbar.min.js"></script>
+    <!-- Bootstrap core js | Do not Delete -->
+    <script src="assets/js/bootstrap.min.js"></script>
 
-<!-- Count To JS -->
-<script src="assets/js/jquery.countTo.min.js"></script>
+    <!-- Bootstrap progressbar JS -->
+    <script src="assets/js/bootstrap-progressbar.min.js"></script>
 
-<!-- Easing JS -->
-<script src="assets/js/jquery.easing.min.js"></script>
+    <!-- Count To JS -->
+    <script src="assets/js/jquery.countTo.min.js"></script>
 
-<!-- Shuffle JS -->
-<script src="assets/js/jquery.shuffle.min.js"></script>
+    <!-- Easing JS -->
+    <script src="assets/js/jquery.easing.min.js"></script>
 
-<!-- Slick Carousel JS -->
-<script src="assets/js/slick.min.js"></script>
+    <!-- Shuffle JS -->
+    <script src="assets/js/jquery.shuffle.min.js"></script>
 
-<!-- Touchswipe JS -->
-<script src="assets/js/touchswipe.min.js"></script>
+    <!-- Slick Carousel JS -->
+    <script src="assets/js/slick.min.js"></script>
 
-<!-- Custom JS -->
-<script src="assets/js/script.js"></script>
+    <!-- Touchswipe JS -->
+    <script src="assets/js/touchswipe.min.js"></script>
 
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+    
+    <!-- Particles Js -->
+    <script src="assets/js/particles.min.js"></script>
+    <script src="assets/js/app.js"></script>
 
+    <!-- Modals JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>   
+  
+     <!-- Form Data -->
+    <script>
+        var xhr = new XMLHttpRequest();
+        var data = document.getElementById('formfoot');
+        
+        function limpiarFormulario() {document.getElementById('formfoot').reset();}
+        
+        function borrarMensaje() {
+          setTimeout(function() {
+            document.getElementById('respuesta').innerHTML = '';
+          }, 2500);
+        }
+        
+        data.addEventListener('submit', function(ev) {
+          ev.preventDefault();
+          
+          var form = new FormData(data);
+        
+          xhr.open('POST', 'send.php');
+          xhr.onload = function() {
+            if (xhr.status === 200) {
+              console.log("Conexión establecida" + " " + xhr.status);
+              console.log(xhr.responseText);
+              document.getElementById('respuesta').innerHTML = xhr.responseText;
+              limpiarFormulario();
+              borrarMensaje();
+            } else {
+              console.log("Error en la petición" + xhr.status);
+            }
+          };
+        
+          xhr.send(form);
+        });
+        
+
+    </script>   
+
+    <!---->
 
 </body>
 
 </html>
+
