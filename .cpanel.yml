@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/c19288/public_html   # Ruta de destino en cPanel
+    - /bin/cp -R /home/c19288/repositories/OrJaverimSitehub.io/* $DEPLOYPATH
